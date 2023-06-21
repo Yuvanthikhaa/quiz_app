@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 //import 'package:sec3/startscreen.dart';
-import 'package:sec3/quiz.dart';
 import 'package:sec3/quiz1.dart';
 
 void main() {
@@ -17,6 +16,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Quiz1());
+    return const MaterialApp(home: Quiz());
   }
 }

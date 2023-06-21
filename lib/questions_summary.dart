@@ -1,36 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:sec3/summary_item.dart';
 
-class QuestionSummary extends StatelessWidget {
-  const QuestionSummary({super.key, required this.summarydata});
-  final List<Map<String, Object>> summarydata;
+class QuestionsSummary extends StatelessWidget {
+  const QuestionsSummary(this.summaryData, {super.key});
+
+  final List<Map<String, Object>> summaryData;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 500,
+      height: 400,
       child: SingleChildScrollView(
         child: Column(
-            children: summarydata.map((value) {
-          return Row(
-            children: [
-              Text(((value['question_index'] as int) + 1).toString()),
-              Expanded(
-                child: Column(
-                  children: [
-                    Text((value['question']) as String),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text((value['chosen_ans']) as String),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Text((value['correct_ans']) as String),
-                  ],
-                ),
-              )
-            ],
-          );
-        }).toList()),
+          children: summaryData.map(
+            (val) {
+              return SummaryItem(val);
+            },
+          ).toList(),
+        ),
       ),
     );
   }
